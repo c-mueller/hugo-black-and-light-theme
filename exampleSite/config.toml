@@ -12,6 +12,12 @@ pygmentscodefences  = true
   sitename = "Black & Light"
   disableWebFonts = false
 
+[params.pagination]
+pagePrefix = ""
+ofSeparator = "/"
+nextPage = "Next >"
+prevPage = "< Previous"
+
 [[menu.main]]
     name = "About"
     url  = "https://github.com/davidhampgonsalves/hugo-black-and-light-theme"

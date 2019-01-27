@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+<section id=content>
+  <ul class=posts_listing>
+    {{ range .Pages }}
+      <li style="text-align: center;">
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <div id=date>
+          <time>{{ .Date.Format (.Site.Params.dateform | default "January 2006") }}</time>
+        </div>
+        <article>
+          {{ .Content }}
+        </article>
+      </li>
+    {{ end }}
+  </ul>
+  
+</section>
+
+{{ end }}
+

@@ -1,0 +1,43 @@
+{{ $pag := $.Paginator }}
+  {{ if gt $pag.TotalPages 1 }}
+    <div style="text-align: center;">
+      <table style="width: 100%">
+        <tbody>
+          <tr>  
+            <td style="text-align: center; width: 33%">
+              {{ if $pag.HasPrev }}
+              <span class="previous {{ if not $pag.HasPrev }}disabled{{ end }}">
+                <a href="{{ if $pag.HasPrev }}{{ $pag.Prev.URL }}{{ end }}">
+                  <span aria-hidden="true">{{$.Site.Params.pagination.prevPage | default "< Previous Page"}}</span>
+                </a>
+              </span>
+              {{else}}
+                <span></span>
+              {{end}}
+            </td>
+            <td style="text-align: center; width: 34%">
+            {{$.Site.Params.pagination.pagePrefix | default "Page"}}
+              <span >
+                {{ $pag.PageNumber }}
+              </span>
+              {{$.Site.Params.pagination.ofSeparator | default "of"}}
+              <span>
+                {{ $pag.TotalPages }}
+              </span>
+            </td>
+            <td style="text-align: center; width: 33%">
+              {{ if $pag.HasNext }}
+              <span class="next {{ if not $pag.HasNext }}disabled{{ end }}">
+                <a href="{{ if $pag.HasNext }}{{ $pag.Next.URL }}{{ end }}">
+                  <span aria-hidden="true">{{$.Site.Params.pagination.nextPage| default "Next Page >"}}</span>
+                </a>
+              </span>
+              {{else}}
+                <span></span>
+              {{ end }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+{{ end }}

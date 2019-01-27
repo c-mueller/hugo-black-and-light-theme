@@ -1,4 +1,4 @@
-{{ partial "header.html" . }}
+{{ define "main" }}
 
 <section id=content>
   <h1 style="text-align: center;">{{ if .Params.heading }} {{ .Params.heading }} {{ else }} {{ .Title }} {{ end }}</h1>
@@ -17,6 +17,6 @@
   </div>
 </section>
 
-{{ partial "footer.html" . }}
+{{ end }}
 
 
