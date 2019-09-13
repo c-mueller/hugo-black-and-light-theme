@@ -1,9 +1,14 @@
   {{ template "_internal/google_analytics_async.html" . }}
-  <div style="text-align: center; font-size: 9pt;">
-  	{{ .Site.Params.copyright }} 
-  	{{ range .Site.Menus.footer }}
+  <div style="text-align: center; font-size: 9pt; line-height: 1px;">
+  	<p style="margin-bottom: 0px">
+      {{ .Site.Params.copyright }} 
+  	  {{ range .Site.Menus.footer }}
           - <a href="{{ .URL }}">{{ .Name }}</a>
-    {{ end }}
+      {{ end }}
+    </p>
+    <p>
+      {{ .Site.Params.footer.madeWithText }} <a href="https://gohugo.io/">Hugo</a> {{ .Site.Params.footer.andText}} <a href="https://github.com/c-mueller/hugo-black-and-light-theme">black-and-light</a>
+    </p>
   </div>
 </body>
 </html>
